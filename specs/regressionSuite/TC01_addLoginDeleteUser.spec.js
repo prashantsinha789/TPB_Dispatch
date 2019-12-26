@@ -1,6 +1,7 @@
-import loginPage from "../pageObjects/login.page";
-import hamburgerMenu from "../pageObjects/hamburgerMenu.page";
-import users from "../pageObjects/addUser.page";
+import loginPage from "../../pageObjects/login.page";
+import hamburgerMenu from "../../pageObjects/hamburgerMenu.page";
+import users from "../../pageObjects/addUser.page";
+
 
 describe("Add/Login/Delete User from Users", () => {
   it("Add & Edit & Login SuperAdmin from Users", () => {
@@ -33,5 +34,5 @@ describe("Add/Login/Delete User from Users", () => {
     expect(users.userName.getText()).to.equal("Welcome, Tom Riddle");
   });
 
-  it("Delete SuperAdmin, Base & Dispatcher from Users", () => {});
+  it("Delete SuperAdmin, Base & Dispatcher from Users", async () => {});
 });

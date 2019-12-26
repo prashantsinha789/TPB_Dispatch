@@ -18,6 +18,14 @@ class getCredentialsMock {
   get createdDispatcher() {
     return "tomriddle@yopmail.com";
   }
+
+  get base() {
+    return "testusersAutomation@yopmail.com";
+  }
+
+  get dasboardMock() {
+    return "Medical Answering Servicess";
+  }
 }
 
 export default new getCredentialsMock();

@@ -28,11 +28,11 @@ class Hamburger {
   }
 
   get allAccounts() {
-    return browser.$(".treeview:nth-child(4) > a > span:nth-child(2)");
+    return browser.$("#accounts");
   }
 
   get accountsMembers() {
-    return browser.$(".menu-open > li:nth-child(1) > a");
+    return browser.$("#members");
   }
 
   get activityLog() {
@@ -53,6 +53,11 @@ class Hamburger {
 
   get help() {
     return browser.$("//span[text()='Help']");
+  }
+
+  clickTransportBase() {
+    this.fleetMenu.click();
+    this.fleetMenuTransport.click();
   }
 }
 

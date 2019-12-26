@@ -1,4 +1,5 @@
 import credentials from "../mockFiles/credentialsMock";
+import baseMock from "../mockFiles/baseMock";
 
 class LoginPage {
   get username() {
@@ -19,6 +20,14 @@ class LoginPage {
 
   get logout() {
     return browser.$("*=Sign Out");
+  }
+
+  get resetPasswd() {
+    return browser.$("//a[text()='Forgot Password?']");
+  }
+
+  get resetButton() {
+    return browser.$("button=Reset Password");
   }
 
   open() {
@@ -51,6 +60,18 @@ class LoginPage {
     this.loginButton.click();
   }
 
+  loginBase() {
+    this.username.setValue(credentials.base);
+    this.password.setValue(credentials.password);
+    this.loginButton.click();
+  }
+  
+  loginCreatedDummyBase() {
+    this.username.setValue(baseMock.primaryEmail);
+    this.password.setValue(credentials.password);
+    this.loginButton.click();
+  }
+
   openAndLoginAsSuperAdmin() {
     this.open();
     this.login();
@@ -69,6 +90,17 @@ class LoginPage {
   openAndLoginAsCreatedDispatcher() {
     this.open();
     this.loginDispatcher();
+  }
+
+  openAndLoginAsBase() {
+    this.open();
+    this.loginBase();
+  }
+
+  resetPassword() {
+    this.resetPasswd.click();
+    this.username.setValue(credentials.username);
+    this.resetButton.click();
   }
 }
 
