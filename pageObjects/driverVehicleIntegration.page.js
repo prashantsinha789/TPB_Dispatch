@@ -73,6 +73,8 @@ class DriverVehicleIntegrationPage {
     this.selectVehicle.click();
     this.selectVehicle.selectByVisibleText(addDriverMock.selectDriver);
     this.saveBtn.click();
+    browser.pause(2000);
+    browser.back();
   }
 
   setDriverAvailable() {
@@ -89,6 +91,7 @@ class DriverVehicleIntegrationPage {
     hamburgerMenuPage.allAccounts.click();
     this.resetButton.click();
     this.searchBase.setValue(addDriverMock.searchBase);
+    browser.pause(2000);
     this.baseDropdown.click();
     this.associatedDrivers.click();
     this.selectAllButton.click();

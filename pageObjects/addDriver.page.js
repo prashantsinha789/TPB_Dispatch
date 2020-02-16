@@ -51,7 +51,9 @@ class AddDriverPage {
 
   addDriver() {
     this.addDriverButton.click();
+    browser.pause(2000);
     this.transportBase.click();
+    browser.pause(2000);
     this.transportBase.selectByVisibleText(driverMockPage.transportBaseName);
     this.transportBase.click();
     this.firstName.setValue(driverMockPage.driverFirstName);

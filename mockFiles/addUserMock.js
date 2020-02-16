@@ -51,6 +51,10 @@ class AddUserMock {
     return "Groot";
   }
 
+  get baseName() {
+    return "Automation Base";
+  }
+
   get baseAlternateNumber() {
     return "8005987899";
   }

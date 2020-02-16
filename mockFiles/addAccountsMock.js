@@ -50,6 +50,10 @@ class addAccountMock {
   get addOnMileage() {
     return "14";
   }
+
+  get apiCallDelete() {
+    return "automationtest@yopmail.com"
+  }
 }
 
 export default new addAccountMock();

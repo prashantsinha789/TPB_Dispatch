@@ -1,14 +1,14 @@
 class baseMock {
   get orgnizatioName() {
-    return "Dummy Base2";
+    return "Dummy Base2DUMMY";
   }
 
   get transitBillingRef() {
-    return "ATB7890";
+    return "ATB78990";
   }
 
   get email() {
-    return "automationTestbase2@yopmail.com";
+    return "automationTestbaseDUMMY@yopmail.com";
   }
 
   get primaryPhone() {

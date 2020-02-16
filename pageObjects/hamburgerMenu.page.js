@@ -35,14 +35,6 @@ class Hamburger {
     return browser.$("#members");
   }
 
-  get activityLog() {
-    return browser.$(".treeview-menu > li:nth-child(2) span");
-  }
-
-  get tripSync() {
-    return browser.$(".ng-star-inserted:nth-child(3) > a > span:nth-child(2)");
-  }
-
   get users() {
     return browser.$("//span[text()='Users']");
   }
@@ -53,6 +45,30 @@ class Hamburger {
 
   get help() {
     return browser.$("//span[text()='Help']");
+  }
+
+  get driversCheckout() {
+    return browser.$("//span[text()='Driver Checkout']");
+  }
+
+  get generateReciept() {
+    return browser.$("#GenerateReceipt");
+  }
+
+  get driverReciept() {
+    return browser.$("#DriverReceipts");
+  }
+
+  get priceConfig() {
+    return browser.$("#PriceConfiguration");
+  }
+
+  get invoice() {
+    return browser.$("//span[text()='Invoice']");
+  }
+
+  get generateInvoice() {
+    return browser.$("#generate");
   }
 
   clickTransportBase() {

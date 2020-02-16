@@ -20,7 +20,23 @@ class AssertionSanityTest {
   }
 
   get memberSearched() {
-    return "DummyPrashant TestAccount"
+    return "DummyPrashant TestAccount";
+  }
+
+  get recieptStatus() {
+    return "RECEIPT TO";
+  }
+
+  get superAdminAssertMsg() {
+    return "Welcome, Tony Stark";
+  }
+
+  get baseAdminAssertMsg() {
+    return "Welcome, IM Groot";
+  }
+
+  get dispatcherAssertMsg() {
+    return "Welcome, Tom Riddle";
   }
 }
 

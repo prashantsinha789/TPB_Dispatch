@@ -3,8 +3,13 @@ import addAccountPage from "../../pageObjects/addAccounts.page";
 import assertionMessages from "../../assertionFiles/assertionRegressionTest";
 import hamburgerMenuPage from "../../pageObjects/hamburgerMenu.page";
 import addMemberPage from "../../pageObjects/addMembers.page";
+import serverFile from "../../serverFile/accountsServer";
 
 describe("Add Accounts & Members", () => {
+  browser.call(async () => {
+    await serverFile.getTokenAndDeleteAccount();
+  });
+
   it("Add Account from SuperAdmin", () => {
     loginPage.openAndLoginAsSuperAdmin();
     browser.pause(2500);

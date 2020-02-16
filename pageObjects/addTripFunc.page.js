@@ -112,6 +112,10 @@ class AddTripFuncPage {
     return browser.$("*=Hide Detail");
   }
 
+  get unAssignedTrip() {
+    return browser.$("//h3[text()='Unassigned']");
+  }
+
   addTripSuperAdmin() {
     this.addTripButton.click();
     browser.pause(2000);
@@ -141,6 +145,8 @@ class AddTripFuncPage {
   selectAndEditTrip() {
     browser.pause(2000);
     this.resetBtn.click();
+    this.unAssignedTrip.click();
+    browser.pause(1000);
     this.transportBaseDropdown.selectByIndex(5);
     this.todayTrips.click();
     browser.pause(2000);
@@ -151,6 +157,7 @@ class AddTripFuncPage {
   }
 
   seeDetailedTrip() {
+    browser.pause(2000);
     this.tripDropdown.click();
     this.showDetailed.click();
     this.addNotes.setValue(addtripMock.addNotes);

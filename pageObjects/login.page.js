@@ -1,5 +1,6 @@
 import credentials from "../mockFiles/credentialsMock";
 import baseMock from "../mockFiles/baseMock";
+import addUserMock from "../mockFiles/addUserMock";
 
 class LoginPage {
   get username() {
@@ -72,6 +73,12 @@ class LoginPage {
     this.loginButton.click();
   }
 
+  loginBaseAdmin() {
+    this.username.setValue(credentials.baseAdminEmail);
+    this.password.setValue(credentials.password);
+    this.loginButton.click();
+  }
+
   openAndLoginAsSuperAdmin() {
     this.open();
     this.login();
@@ -95,6 +102,11 @@ class LoginPage {
   openAndLoginAsBase() {
     this.open();
     this.loginBase();
+  }
+
+  openAndLoginAsBaseAdmin() {
+    this.open();
+    this.loginBaseAdmin();
   }
 
   resetPassword() {

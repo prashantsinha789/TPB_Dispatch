@@ -1,4 +1,5 @@
 import credentialsMock from "../mockFiles/credentialsMock";
+import addUsermock from "../mockFiles/addUserMock"
 
 class tripDashboard {
     
@@ -17,7 +18,7 @@ class tripDashboard {
   selectFilter() {
     browser.pause(3000);
     this.resetButton.click();
-    this.transportBaseFilter.selectByIndex(15);
+    this.transportBaseFilter.selectByVisibleText(addUsermock.baseName);
     browser.pause(3000);
     this.corporateAccountID.click();
     this.corporateAccountID.selectByVisibleText(credentialsMock.dasboardMock);

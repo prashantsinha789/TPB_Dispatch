@@ -4,11 +4,11 @@ class AddVehicleMock {
   }
 
   get vin() {
-    return "1235GHJK567";
+    return "1235GHJeK67";
   }
 
   get carNumber() {
-    return "US7891";
+    return "US7801";
   }
 
   get make() {
@@ -24,7 +24,7 @@ class AddVehicleMock {
   }
 
   get lNo() {
-    return "USA007";
+    return "USA789";
   }
 
   get regDate() {

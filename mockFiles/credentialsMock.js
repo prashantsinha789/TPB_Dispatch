@@ -26,6 +26,10 @@ class getCredentialsMock {
   get dasboardMock() {
     return "Medical Answering Servicess";
   }
+
+  get baseAdminEmail() {
+    return "prashant.sinha@taazaa.com";
+  }
 }
 
 export default new getCredentialsMock();

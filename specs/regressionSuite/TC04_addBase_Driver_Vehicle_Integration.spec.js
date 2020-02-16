@@ -6,8 +6,17 @@ import addVehiclePage from "../../pageObjects/addVehicle.page";
 import addBasePage from "../../pageObjects/addBase.page";
 import assertionSanityTest from "../../assertionFiles/assertionRegressionTest";
 import integrationDriverVehicle from "../../pageObjects/driverVehicleIntegration.page";
+import driverServerFile from "../../serverFile/driverServer";
+import vehicleServerFile from "../../serverFile/vehicleServer";
+import baseServerFile from "../../serverFile/baseServer";
 
 describe("Add Base,Driver,Vehicle & Integrate it to each other", () => {
+  browser.call(async () => {
+    await driverServerFile.getTokenAndDeleteDriver();
+    await vehicleServerFile.getTokenAndDeleteVehicle();
+    await baseServerFile.getTokenAndDeleteBase();
+  });
+
   it("Add Base from SuperAdmin", () => {
     loginPage.openAndLoginAsSuperAdmin();
     browser.pause(2500);

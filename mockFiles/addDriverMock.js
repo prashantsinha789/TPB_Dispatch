@@ -16,11 +16,11 @@ class AddDriverMock {
   }
 
   get email() {
-    return "dummyDriver@yopmail.com";
+    return "dummyDriver2@yopmail.com";
   }
 
   get licenseNumber() {
-    return "7891007AUTO";
+    return "7891777AUTO";
   }
 
   get expiry() {

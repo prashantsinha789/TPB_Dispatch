@@ -38,6 +38,7 @@ class completeTripFuncPage {
     this.todayTrips.click();
     browser.pause(3000);
     this.tripDropdown.click();
+    browser.pause(2000);
     this.completeTrip.click();
     this.selectDriver.click();
     this.selectDriver.selectByIndex(1);

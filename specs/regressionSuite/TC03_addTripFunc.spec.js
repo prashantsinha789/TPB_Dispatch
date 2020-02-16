@@ -3,8 +3,13 @@ import addTrip from "../../pageObjects/addTripFunc.page";
 import hamburgerMenuPage from "../../pageObjects/hamburgerMenu.page";
 import completetripPage from "../../pageObjects/completeTripFunc.page";
 import assertionMessages from "../../assertionFiles/assertionRegressionTest";
+import medicaidServer from "../../serverFile/medicaidIDServer";
 
 describe("Add-Edit-Details Trip from SuperAdmin", () => {
+  browser.call(async () => {
+    await medicaidServer.getTokenAndDeletePassenger();
+  });
+
   it("Add Trip Details and verify it on dashboard", () => {
     loginPage.openAndLoginAsSuperAdmin();
     browser.pause(2500);
@@ -23,6 +28,8 @@ describe("Add-Edit-Details Trip from SuperAdmin", () => {
     browser.pause(2500);
     hamburgerMenuPage.tripsPage.click();
     completetripPage.completeTipOffline();
-    expect(completetripPage.completeStatus.getText()).to.equal(assertionMessages.completedAssert);
+    expect(completetripPage.completeStatus.getText()).to.equal(
+      assertionMessages.completedAssert
+    );
   });
 });

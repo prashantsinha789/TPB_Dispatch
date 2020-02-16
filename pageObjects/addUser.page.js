@@ -95,7 +95,7 @@ class AddUser {
     this.password.setValue(addUsermock.basePassword);
     this.confirmPassword.setValue(addUsermock.basePassword);
     this.role.selectByIndex(2);
-    this.organization.selectByIndex(15);
+    this.organization.selectByVisibleText(addUsermock.baseName);
     browser.pause(1000);
     this.saveBtn.click();
     this.userRole.selectByIndex(2); //on add user page for searching created user
@@ -119,7 +119,7 @@ class AddUser {
     this.password.setValue(addUsermock.dispatcherPassword);
     this.confirmPassword.setValue(addUsermock.dispatcherPassword);
     this.role.selectByIndex(3);
-    this.organization.selectByIndex(15);
+    this.organization.selectByVisibleText(addUsermock.baseName);
     browser.pause(1000);
     this.saveBtn.click();
     this.userRole.selectByIndex(3); //on add user page for searching created user

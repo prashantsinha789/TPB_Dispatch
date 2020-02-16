@@ -1,5 +1,23 @@
 exports.config = {
   //
+
+  specs: ['./specs/**/*.spec.js'],
+  // ...
+  // define specific suites
+  suites: {
+      regressionSuite: [
+          './specs/regressionSuite/TC01_addLoginDeleteUser.spec.js',
+          './specs/regressionSuite/TC03_addTripFunc.spec.js',
+          './specs/regressionSuite/TC04_addBase_Driver_Vehicle_Integration.spec.js',
+          './specs/regressionSuite/TC05_addAccountandMembers.spec.js',
+          './specs/regressionSuite/TC06_driverInvoices&Reciept.spec.js',
+          './specs/regressionSuite/TC07_networkInvoices.spec.js',     
+      ],
+      otherFeature: [
+          // ...
+      ]
+  },
+
   // ====================
   // Runner Configuration
   // ====================
@@ -40,7 +58,7 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 1,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -54,6 +72,7 @@ exports.config = {
       maxInstances: 5,
       //
       browserName: "chrome"
+      
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -130,7 +149,7 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: "bdd",
-    timeout: 60000
+    timeout: 6000000
     // require: ['@babel/register', './test/helpers/common.js']
   },
   //
@@ -166,10 +185,9 @@ exports.config = {
   before: function(capabilities, specs) {
     require("@babel/register");
     require("chai/register-expect"); // Using Expect style
-  }
-  // before: function (capabilities, specs) {
-  // },
-  /**
+    browser.maximizeWindow()
+  },
+    /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
    * @param {Array} args arguments that command would receive
